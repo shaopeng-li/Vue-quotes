@@ -30,6 +30,9 @@
         },
         methods: {
           newQuote (quote) {
+            if (this.quotes.length >= this.maxQuotes) {
+              return alert('please delete some quote first!');
+            }
             this.quotes.push(quote);
           },
           quoteDeleted (index) {
